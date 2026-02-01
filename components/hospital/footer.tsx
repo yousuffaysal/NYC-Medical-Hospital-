@@ -158,8 +158,11 @@ export default function Footer() {
                   Accessibility
                 </Link>
               </div>
-              <div className="md:text-right">
+              <div className="md:text-right flex flex-col items-end gap-1">
                 <p>&copy; 2024 NYC Medical Center. All rights reserved.</p>
+                <p className="text-xs flex items-center gap-1">
+                  Powered by <a href="https://foxmen.studio" target="_blank" rel="noopener noreferrer" className="text-teal-400 hover:text-teal-300 font-medium transition-colors">Foxmen Studio</a>
+                </p>
               </div>
             </div>
           </div>
