@@ -30,8 +30,8 @@ export default function Footer() {
               <div className="flex items-center gap-3 mb-4">
                 <div className="relative w-10 h-10">
                   <Image
-                    src="https://ik.imagekit.io/8fky5hetz/Blue%20and%20White%20Geometric%20Health%20Logo%20(1).png"
-                    alt="Logo"
+                    src="/placeholder-logo.svg"
+                    alt="NYC Medical Logo"
                     fill
                     className="object-contain brightness-0 invert"
                   />
