@@ -14,6 +14,7 @@ import Header from '@/components/hospital/header'
 import Footer from '@/components/hospital/footer'
 import SpecialtiesGrid from '@/components/hospital/specialties-grid'
 import AppointmentSectionComponent from '@/components/hospital/appointment-section'
+import AiFeatureSection from '@/components/hospital/ai-feature-section'
 import NewsSectionComponent from '@/components/hospital/news-section'
 import ContactSectionComponent from '@/components/hospital/contact-section'
 import ScrollAnimation from '@/components/ui/scroll-animation'
@@ -63,6 +64,10 @@ export default function Home() {
 
       <ScrollAnimation>
         <AppointmentSectionComponent onBookClick={() => handleBookAppointment()} />
+      </ScrollAnimation>
+
+      <ScrollAnimation>
+        <AiFeatureSection />
       </ScrollAnimation>
 
       <ScrollAnimation>

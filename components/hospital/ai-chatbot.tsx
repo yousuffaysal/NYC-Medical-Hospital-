@@ -269,6 +269,7 @@ export default function AiChatbot() {
             </AnimatePresence>
 
             <motion.button
+                id="ai-chatbot-toggle"
                 className="fixed bottom-6 right-6 h-16 w-16 bg-teal-600 hover:bg-teal-700 text-white rounded-full shadow-lg shadow-teal-500/30 flex items-center justify-center z-50 transition-colors"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
