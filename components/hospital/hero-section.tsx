@@ -17,8 +17,8 @@ export default function HeroSection({ onCTAClick }: HeroSectionProps) {
 
   return (
     <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-background">
-      {/* Video Background - Desktop */}
-      <div className="absolute inset-0 overflow-hidden hidden md:block">
+      {/* Video Background - All Devices */}
+      <div className="absolute inset-0 overflow-hidden">
         <video
           autoPlay
           loop
@@ -31,69 +31,56 @@ export default function HeroSection({ onCTAClick }: HeroSectionProps) {
           <source src="/videos/medical-hero.mov" type="video/quicktime" />
         </video>
         {/* Overlays for Readability */}
-        <div className="absolute inset-0 bg-black/5 dark:bg-slate-950/30" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/50 to-transparent" />
+        <div className="absolute inset-0 bg-black/40 dark:bg-slate-950/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/50 to-transparent" />
       </div>
 
-      {/* Static Image Background - Mobile */}
-      <div className="absolute inset-0 overflow-hidden block md:hidden">
-        <Image
-          src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&q=80"
-          alt="Medical Hero Background"
-          fill
-          className="object-cover"
-          priority
-        />
-        {/* Stronger overlay for mobile text readability */}
-        <div className="absolute inset-0 bg-background/80" />
-      </div>
-
-      <div className="relative z-10 w-full mx-auto px-6 sm:px-12 lg:px-24 xl:px-32 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center pt-32 lg:pt-0">
+      <div className="relative z-10 w-full mx-auto px-6 sm:px-12 lg:px-24 xl:px-32 grid lg:grid-cols-2 gap-8 lg:gap-20 items-center pt-28 lg:pt-0">
 
         {/* Text Content */}
         <div className="text-left">
-          <div className={`flex items-center gap-2 mb-6 transition-all duration-700 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
-            <span className="px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-semibold tracking-wide uppercase border border-accent/20">
+          <div className={`flex items-center gap-2 mb-4 lg:mb-6 transition-all duration-700 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
+            <span className="px-3 py-1 rounded-full bg-accent/10 text-accent text-xs lg:text-sm font-semibold tracking-wide uppercase border border-accent/20">
               World-Class Healthcare
             </span>
           </div>
 
-          <h1 className={`text-4xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-foreground tracking-tight transition-all duration-700 delay-100 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+          <h1 className={`text-4xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-4 lg:mb-6 text-foreground tracking-tight transition-all duration-700 delay-100 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
             Advanced Medicine. <br />
             <span className="text-teal-600">Trusted Care.</span>
           </h1>
 
-          <p className={`text-lg sm:text-xl text-muted-foreground mb-10 max-w-lg leading-relaxed transition-all duration-700 delay-200 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+          <p className={`text-base lg:text-xl text-muted-foreground/90 mb-8 lg:mb-10 max-w-lg leading-relaxed transition-all duration-700 delay-200 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
             Dedicated to providing the highest standard of patient-centered treatment. From emergency services to specialized surgery, your health is our priority.
           </p>
 
           <div className={`flex flex-wrap gap-4 transition-all duration-700 delay-300 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
             <button
               onClick={onCTAClick}
-              className="group relative px-8 py-4 bg-teal-600 text-white rounded-2xl font-bold text-lg shadow-lg hover:shadow-teal-600/25 hover:scale-105 transition-all duration-300 flex items-center gap-3 overflow-hidden"
+              className="group relative px-6 py-3 lg:px-8 lg:py-4 bg-teal-600 text-white rounded-2xl font-bold text-base lg:text-lg shadow-lg hover:shadow-teal-600/25 hover:scale-105 transition-all duration-300 flex items-center gap-2 lg:gap-3 overflow-hidden"
             >
               <span>Book Appointment</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 group-hover:translate-x-1 transition-transform" />
             </button>
-            <button className="px-8 py-4 bg-background border border-border text-foreground hover:bg-muted/50 rounded-2xl font-semibold text-lg transition-all duration-300">
+            <button className="px-6 py-3 lg:px-8 lg:py-4 bg-background/50 backdrop-blur-sm border border-border text-foreground hover:bg-muted/50 rounded-2xl font-semibold text-base lg:text-lg transition-all duration-300">
               Explore Services
             </button>
           </div>
 
-          <div className={`mt-16 flex items-center gap-10 transition-all duration-700 delay-500 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+          <div className={`mt-10 lg:mt-16 flex items-center gap-6 lg:gap-10 transition-all duration-700 delay-500 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
             <div className="flex flex-col">
-              <span className="text-3xl font-bold text-foreground">98%</span>
-              <span className="text-sm text-muted-foreground font-bold uppercase tracking-wider mt-1">Satisfaction</span>
+              <span className="text-2xl lg:text-3xl font-bold text-foreground">98%</span>
+              <span className="text-[10px] lg:text-sm text-muted-foreground font-bold uppercase tracking-wider mt-1">Satisfaction</span>
             </div>
-            <div className="w-px h-12 bg-border" />
+            <div className="w-px h-8 lg:h-12 bg-border" />
             <div className="flex flex-col">
-              <span className="text-3xl font-bold text-foreground">15min</span>
-              <span className="text-sm text-muted-foreground font-bold uppercase tracking-wider mt-1">Avg Wait Time</span>
+              <span className="text-2xl lg:text-3xl font-bold text-foreground">15min</span>
+              <span className="text-[10px] lg:text-sm text-muted-foreground font-bold uppercase tracking-wider mt-1">Avg Wait Time</span>
             </div>
-            <div className="w-px h-12 bg-border" />
+            <div className="w-px h-8 lg:h-12 bg-border" />
             <div className="flex flex-col">
-              <span className="text-3xl font-bold text-foreground">24/7</span>
-              <span className="text-sm text-muted-foreground font-bold uppercase tracking-wider mt-1">Care & Support</span>
+              <span className="text-2xl lg:text-3xl font-bold text-foreground">24/7</span>
+              <span className="text-[10px] lg:text-sm text-muted-foreground font-bold uppercase tracking-wider mt-1">Care & Support</span>
             </div>
           </div>
         </div>
