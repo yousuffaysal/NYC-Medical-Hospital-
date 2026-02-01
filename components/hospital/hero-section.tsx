@@ -16,15 +16,15 @@ export default function HeroSection({ onCTAClick }: HeroSectionProps) {
   }, [])
 
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-background">
-      {/* Video Background */}
-      <div className="absolute inset-0 overflow-hidden">
+    <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-background">
+      {/* Video Background - Desktop */}
+      <div className="absolute inset-0 overflow-hidden hidden md:block">
         <video
           autoPlay
           loop
           muted
           playsInline
-          poster="https://images.unsplash.com/photo-1532153975070-2e9ab71f1b14?auto=format&fit=crop&q=80"
+          poster="https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&q=80"
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="/videos/medical-hero.mov" type="video/mp4" />
@@ -35,7 +35,20 @@ export default function HeroSection({ onCTAClick }: HeroSectionProps) {
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/50 to-transparent" />
       </div>
 
-      <div className="relative z-10 w-full mx-auto px-6 sm:px-12 lg:px-24 xl:px-32 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      {/* Static Image Background - Mobile */}
+      <div className="absolute inset-0 overflow-hidden block md:hidden">
+        <Image
+          src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&q=80"
+          alt="Medical Hero Background"
+          fill
+          className="object-cover"
+          priority
+        />
+        {/* Stronger overlay for mobile text readability */}
+        <div className="absolute inset-0 bg-background/80" />
+      </div>
+
+      <div className="relative z-10 w-full mx-auto px-6 sm:px-12 lg:px-24 xl:px-32 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center pt-32 lg:pt-0">
 
         {/* Text Content */}
         <div className="text-left">
@@ -45,7 +58,7 @@ export default function HeroSection({ onCTAClick }: HeroSectionProps) {
             </span>
           </div>
 
-          <h1 className={`text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-foreground tracking-tight transition-all duration-700 delay-100 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+          <h1 className={`text-4xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-foreground tracking-tight transition-all duration-700 delay-100 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
             Advanced Medicine. <br />
             <span className="text-teal-600">Trusted Care.</span>
           </h1>
