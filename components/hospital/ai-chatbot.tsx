@@ -29,6 +29,8 @@ export default function AiChatbot() {
         }
     }, [messages])
 
+    const startInputRef = useRef('')
+
     const toggleListening = () => {
         if (isListening) {
             setIsListening(false)
@@ -42,15 +44,25 @@ export default function AiChatbot() {
 
         const recognition = new (window as any).webkitSpeechRecognition()
         recognition.continuous = false
-        recognition.interimResults = false
+        recognition.interimResults = true
         recognition.lang = 'en-US'
 
-        recognition.onstart = () => setIsListening(true)
+        recognition.onstart = () => {
+            setIsListening(true)
+            startInputRef.current = input
+        }
 
         recognition.onresult = (event: any) => {
-            const transcript = event.results[0][0].transcript
-            setInput(prev => prev + (prev ? ' ' : '') + transcript)
-            setIsListening(false)
+            let transcript = ''
+            for (let i = event.resultIndex; i < event.results.length; ++i) {
+                transcript += event.results[i][0].transcript
+            }
+
+            // Only update if we have a transcript
+            if (transcript) {
+                const prefix = startInputRef.current ? startInputRef.current + ' ' : ''
+                setInput(prefix + transcript)
+            }
         }
 
         recognition.onerror = (event: any) => {
@@ -58,7 +70,9 @@ export default function AiChatbot() {
             setIsListening(false)
         }
 
-        recognition.onend = () => setIsListening(false)
+        recognition.onend = () => {
+            setIsListening(false)
+        }
 
         recognition.start()
     }
