@@ -46,7 +46,7 @@ export default function AdminSidebar() {
                             src="https://ik.imagekit.io/8fky5hetz/Blue%20and%20White%20Geometric%20Health%20Logo%20(1).png"
                             alt="NYC Medical Logo"
                             fill
-                            className="object-contain brightness-0 invert"
+                            className="object-contain"
                         />
                     </div>
                     <div className={cn("flex flex-col transition-opacity duration-300", collapsed ? "opacity-0 w-0" : "opacity-100")}>
