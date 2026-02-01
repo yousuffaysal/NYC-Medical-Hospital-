@@ -234,7 +234,7 @@ export default function AiChatbot() {
                                     value={input}
                                     onChange={(e) => setInput(e.target.value)}
                                     placeholder={isListening ? "Listening..." : "Ask a health question..."}
-                                    className="pr-12 bg-slate-100 dark:bg-slate-800 border-transparent focus:bg-white dark:focus:bg-slate-900 dark:text-white rounded-xl h-11 transition-all"
+                                    className="pr-12 bg-slate-100 text-slate-900 dark:bg-slate-800 border-transparent focus:bg-white dark:focus:bg-slate-900 dark:text-white rounded-xl h-11 transition-all"
                                 />
                                 <Button
                                     size="icon"
